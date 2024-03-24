@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idebootcamp2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+          <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Oswald', sans-serif;
+}
+body{
+    background-color: black;
+}
+.wrapper{
+  position: fixed;
+  top: 0;
+  /*left: -100%;*/
+  right: -100%;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  /*background: linear-gradient(90deg, #f92c78, #4114a1);*/
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+ /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
+  transition: all 0.6s ease-in-out;
+}
+#active:checked ~ .wrapper{
+  /*left: 0;*/
+  right:0;
+}
+.menu-btn{
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  /*left: 20px; */
+  top: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  /*color: #fff;*/
+  /*background: linear-gradient(90deg, #f92c78, #4114a1);*/
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+ /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
+  transition: all 0.3s ease-in-out;
+}
+.menu-btn span,
+.menu-btn:before,
+.menu-btn:after{
+	content: "";
+	position: absolute;
+	top: calc(50% - 1px);
+	left: 30%;
+	width: 40%;
+	border-bottom: 2px solid white;
+	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.menu-btn:before{
+  transform: translateY(-8px);
+}
+.menu-btn:after{
+  transform: translateY(8px);
+}
+
+
+.close {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	transition: background .6s;
+}
+
+/* closing animation */
+#active:checked + .menu-btn span {
+	transform: scaleX(0);
+}
+#active:checked + .menu-btn:before {
+	transform: rotate(45deg);
+  border-color: #fff;
+}
+#active:checked + .menu-btn:after {
+	transform: rotate(-45deg);
+  border-color: #fff;
+}
+.wrapper ul{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li{
+  height: 10%;
+  margin: 15px 0;
+}
+.wrapper ul li a{
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: #ffffff;
+  border-radius: 50px;
+  position: absolute;
+  line-height: 50px;
+  margin: 5px 30px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper ul li a:after{
+  position: absolute;
+  content: "";
+  background: #fff;
+   /*background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);*/
+  /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.wrapper ul li a:hover:after{
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover{
+  color: #1a73e8;
+}
+input[type="checkbox"]{
+  display: none;
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  color: #faf9f9;
+}
+.content .title{
+  font-size: 40px;
+  font-weight: 700;
+}
+.content p{
+  font-size: 35px;
+  font-weight: 600;
+}
+.h3{
+  color: rgb(3, 14, 43);
+}
+#active:checked ~ .wrapper ul li a{
+  opacity: 1;
+}
+.wrapper ul li a{
+  transition: opacity 1.2s, transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translateX(100px);
+}
+#active:checked ~ .wrapper ul li a{
+	transform: none;
+	transition-timing-function: ease, cubic-bezier(.1,1.3,.3,1); /* easeOutBackを緩めた感じ */
+   transition-delay: .6s;
+  transform: translateX(-100px);
+}
+
+.con {
+        background-color: rgba(249, 249, 246, 0.5);
+        padding: 5px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 100%;
+        width: 700px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+.upper-section {
+    height: 50vh;
+    background-image: url('k7.png'); /* Add your image URL here */
+    background-size: 100% 100%;
+    background-position: center;
+  }
+  .lower-section {
+    height: 50vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bodyl {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .container {
+      background-color: #000;
+        width: 200px;
+        height: 200px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        margin: 15px;
+        position: relative;
+        overflow: hidden;
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 10px 5px white;
+    }
+
+    .container:hover {
+        transform: translateY(-5px);
+    }
+
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: radial-gradient(circle , rgba(13, 3, 104, 0.8) 0%, rgba(255,255,255,0) 80%);
+        z-index: -1;
+        border-radius: 10px;
+    }
+
+    .event-list {
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Lighting effect */
+    .container:hover::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        box-shadow: 0 0 10px 5px rgb(12, 10, 129);
+        z-index: -1;
+        border-radius: 10px;
+    }
+    .chc1{
+      color: navy;
+    }
+    .logo-container {
+        position: fixed;
+        top: 10px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap; /* Added to wrap logos when screen size is reduced */
+        justify-content: center; /* Added to align logos to the left */
+       
+       
+    }
+     /* Style for individual logos */
+     .logo {
+        width: 300px; /* Adjust the width as needed */
+        margin-right: 10px; /* Adjust the margin as needed */
+        margin-bottom: 30px; /* Added margin bottom to create space between rows */
+    }
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+        .logo {
+            width: 80px; /* Reduce the width for smaller screens */
+            margin-right: 5px; /* Reduce the margin for smaller screens */
+        }
+    }
+    </style>
+</head>
+<body>
+    
+
+          <input type="checkbox" id="active">
+          <label for="active" class="menu-btn"><span></span></label>
+          <label for="active" class="close"></label>
+          <div class="wrapper">
+            <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="registartion.html">Registration</a></li>
+      <li><a href="accomodation.html">Accomodation</a></li>
+      <li><a href="contactus.html">Contactus</a></li>
+      <li><a href="#">Team</a></li>
+
+
+      </ul>
+      </div>
+      <div class="content">
+        <div class="upper-section">
+          <div class="logo-container">
+            <!-- First Logo -->
+            <img class="logo" src="">
+            </div>
+        
+          <h1 align="center">
+              
+          </h1 ><div class="con">
+          <h5 class="h3">
+           
+          </h5>
+        </div>
+        </div>
+        <div class="lower-section">
+      <div class="bodyl">    
+<div class="container">
+  <div class="event-list">
+      
+      <h1 class="chc1">
+        workshop
+      </h1>
+      <h6>
+        The workshop will cover essential topics, engage participants with interactive sessions, provide valuable resources, and encourage participation through Q&A sessions, all aimed at enhancing learning and fostering collaboration.
+      </h6>
+  </div>
+</div>
+
+<div class="container">
+  <div class="event-list">
+      <h1 class="chc1">Jr.Hackathon</h1>
+      <h6>
+        Junior hackathons offer a platform for young minds to explore problem-solving 
+        in a supportive environment. Participants showcase
+          their creativity through fun and educational challenges.
+      </h6>
+  </div>
+</div>
+
+<div class="container">
+  <div class="event-list">
+     <h1 class="chc1">Seminar</h1>
+     <h6>
+      Seminars are educational events where experts present on specific topics to inform and 
+      engage audiences. Attendees gain valuable insights 
+       to enhance their knowledge and professional development.
+     </h6>
+  </div>
+</div>
+<div class="container">
+  <div class="event-list">
+     <h1 class="chc1">Innovation</h1>
+     <h6>
+      Innovation drives progress by introducing new ideas, methods, or products that 
+      revolutionize industries and improve lives. It involves creativity, problem-solving to address challenges and seize opportunities, 
+      ultimately shaping a brighter future for society.
+     </h6>
+  </div>
+</div>
+</div>
+          
+
+
+        </div>
+        
+      </div>
+      
+
+
+</body>
+</html>
