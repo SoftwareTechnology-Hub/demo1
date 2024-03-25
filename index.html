@@ -16,7 +16,7 @@
   font-family: 'Oswald', sans-serif;
 }
 body{
-    background-color: black;
+    background-color: #062c5e;
 }
 .wrapper{
   position: fixed;
@@ -62,7 +62,7 @@ body{
 	top: calc(50% - 1px);
 	left: 30%;
 	width: 40%;
-	border-bottom: 2px solid white;
+	border-bottom: 2px solid #000;
 	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .menu-btn:before{
@@ -152,7 +152,7 @@ input[type="checkbox"]{
   z-index: -1;
   text-align: center;
   width: 100%;
-  color: #faf9f9;
+  color: #010000;
 }
 .content .title{
   font-size: 40px;
@@ -162,9 +162,7 @@ input[type="checkbox"]{
   font-size: 35px;
   font-weight: 600;
 }
-.h3{
-  color: rgb(3, 14, 43);
-}
+
 #active:checked ~ .wrapper ul li a{
   opacity: 1;
 }
@@ -179,178 +177,71 @@ input[type="checkbox"]{
   transform: translateX(-100px);
 }
 
-.con {
-        background-color: rgba(249, 249, 246, 0.5);
-        padding: 5px;
-        border-radius: 10px;
-        text-align: center;
-        max-width: 100%;
-        width: 700px;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-
 .upper-section {
-    height: 50vh;
-    background-image: url('bg13.gif'); /* Add your image URL here */
-    background-size: 100% 100%;
-    background-position: center;
-  }
-  .lower-section {
-    height: 50vh;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .bodyl {
-        background-color: black;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:  20px; /* Adjust the padding as needed */
+            background-color: #e6b209;
+            color: #ffffff;
+        }
+        .logo img {
+            width: 250px; /* Adjust the width of the logo as needed */
+            height: auto;
+        }
+
+        .middle-section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column; /* Arrange items vertically */
+            align-items: center;
+            padding:100px  50px;
+            text-align: center;
+            font-size: 5vw;
+            background-image: url("bg13.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #1a73e8;
+            color: #fff;
+        }
+        .lower-section {
+             
+            background-color: #1ae81a; /* Change the background color as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px ;
+            color: #fff;
+        }
         
+/* Media query for tablets and larger devices */
+@media (min-width: 768px) {
+    .upper-section {
+        height: 8vh; /* Adjust the height as needed */
+        padding: 0px 40px; /* Adjust the padding as needed */
     }
 
-    .container {
-      background-color: #000;
-        width: 200px;
-        height: 200px;
-        border: 1px solid transparent;
-        border-radius: 10px;
-        margin: 15px;
-        position: relative;
-        overflow: hidden;
-        border-color: rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 10px 5px white;
+    .logo {
+        max-width: 150px; /* Adjust the maximum width of the logo as needed */
     }
 
-    .container:hover {
-        transform: translateY(-5px);
+    .middle-section {
+        font-size: 18px; /* Adjust the font size as needed */
     }
+}
 
-
-    .container::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background: radial-gradient(circle , rgba(13, 3, 104, 0.8) 0%, rgba(255,255,255,0) 80%);
-        z-index: -1;
-        border-radius: 10px;
-    }
-
-    .event-list {
-        color: white;
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    /* Lighting effect */
-    .container:hover::after {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        box-shadow: 0 0 10px 5px rgb(12, 10, 129);
-        z-index: -1;
-        border-radius: 10px;
-    }
-    .chc1{
-      color: navy;
-    }
-    .logo-container {
-        position: fixed;
-        top: 10px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap; /* Added to wrap logos when screen size is reduced */
-        justify-content: center; /* Added to align logos to the left */
-       
-       
-    }
-     /* Style for individual logos */
-     .logo {
-        width: 300px; /* Adjust the width as needed */
-        margin-right: 10px; /* Adjust the margin as needed */
-        margin-bottom: 30px; /* Added margin bottom to create space between rows */
-    }
-  /* Media query for smaller screens */
-  @media (max-width: 768px) {
-        .logo {
-            width: 80px; /* Reduce the width for smaller screens */
-            margin-right: 5px; /* Reduce the margin for smaller screens */
-        }
-    }
-    @media (max-width: 1200px) {
-            /* Adjust styles for screens up to 1200px wide */
-            .menu-btn {
-                right: 10px;
-                top: 10px;
-                height: 40px;
-                width: 40px;
-                font-size: 16px;
-            }
-            .wrapper ul li a {
-                font-size: 24px;
-            }
-            .content .title {
-                font-size: 32px;
-            }
-            .content p {
-                font-size: 28px;
-            }
-            .container {
-                width: 150px;
-                height: 150px;
-            }
-            .event-list {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* Adjust styles for screens up to 768px wide */
-            .menu-btn {
-                right: 5px;
-                top: 5px;
-                height: 30px;
-                width: 30px;
-                font-size: 12px;
-            }
-            .wrapper ul li a {
-                font-size: 18px;
-            }
-            .content .title {
-                font-size: 24px;
-            }
-            .content p {
-                font-size: 20px;
-            }
-            .container {
-                width: 100px;
-                height: 100px;
-            }
-            .event-list {
-                font-size: 12px;
-            }
-        }
     </style>
 </head>
 <body>
+  <div class="upper-section">
+    <label for="active" class="menu-btn"><span></span></label>
+    <div class="logo">
+        <!-- Your logo goes here -->
+        <img src="k1.jpeg" alt="Logo">
+    </div>
+</div>
     
-
           <input type="checkbox" id="active">
-          <label for="active" class="menu-btn"><span></span></label>
           <label for="active" class="close"></label>
           <div class="wrapper">
             <ul>
@@ -365,72 +256,19 @@ input[type="checkbox"]{
 
       </ul>
       </div>
-      <div class="content">
-        <div class="upper-section">
-          <div class="logo-container">
-            <!-- First Logo -->
-          
-            </div>
-        
-          <h1 align="center">
-              INNOVATION DESIGN & ENTREPRENEURNSHIP (IDE) BOOT CAMP
-          </h1 ><div class="con">
-          <h5 class="h3">
-            Organized by Ministry of Education's Innovation Cell (MIC) & All India Council for Technical Education (AICTE)
-          </h5>
+      <div class="middle-section">
+        <div>
+            <h1> INNOVATION DESIGN & ENTREPRENEURNSHIP (IDE) BOOT CAMP </h1>
         </div>
+        <div>
+            <h5>Organized by Ministry of Education's Innovation Cell (MIC) & All India Council for Technical Education (AICTE)
+            </h5>
+            <h3>Place: <span>&#127964;</span> GIFT,BBSR
+            </h3>
+            <h3>Date: <span>&nbsp;&#128197;&nbsp;</span> 9thapril - 10thapril, 2024
+
+            </h3>
         </div>
-        <div class="lower-section">
-      <div class="bodyl">    
-<div class="container">
-  <div class="event-list">
-      
-      <h1 class="chc1">
-        workshop
-      </h1>
-      <h6>
-        The workshop will cover essential topics, engage participants with interactive sessions, provide valuable resources, and encourage participation through Q&A sessions, all aimed at enhancing learning and fostering collaboration.
-      </h6>
-  </div>
-</div>
-
-<div class="container">
-  <div class="event-list">
-      <h1 class="chc1">Jr.Hackathon</h1>
-      <h6>
-        Junior hackathons offer a platform for young minds to explore problem-solving 
-        in a supportive environment. Participants showcase
-          their creativity through fun and educational challenges.
-      </h6>
-  </div>
-</div>
-
-<div class="container">
-  <div class="event-list">
-     <h1 class="chc1">Seminar</h1>
-     <h6>
-      Seminars are educational events where experts present on specific topics to inform and 
-      engage audiences. Attendees gain valuable insights 
-       to enhance their knowledge and professional development.
-     </h6>
-  </div>
-</div>
-<div class="container">
-  <div class="event-list">
-     <h1 class="chc1">Innovation</h1>
-     <h6>
-      Innovation drives progress by introducing new ideas, methods, or products that 
-      revolutionize industries and improve lives. It involves creativity, problem-solving to address challenges and seize opportunities, 
-      ultimately shaping a brighter future for society.
-     </h6>
-  </div>
-</div>
-</div>
-          
-
-
-        </div>
-        
       </div>
       
 
