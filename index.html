@@ -17,6 +17,7 @@
 }
 body{
     background-color: #062c5e;
+    margin: 0;
 }
 .wrapper{
   position: fixed;
@@ -30,6 +31,7 @@ body{
   /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
  /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
   transition: all 0.6s ease-in-out;
+  z-index: 2;
 }
 #active:checked ~ .wrapper{
   /*left: 0;*/
@@ -74,9 +76,9 @@ body{
 
 
 .close {
-	z-index: 1;
-	width: 100%;
-	height: 100%;
+	z-index: 3;
+	width: 100vw;
+	height: 100vh;
 	pointer-events: none;
 	transition: background .6s;
 }
@@ -182,7 +184,7 @@ input[type="checkbox"]{
             justify-content: space-between;
             align-items: center;
             padding:  20px; /* Adjust the padding as needed */
-            background-color: #e6b209;
+            background-color: #0a1c5c;
             color: #ffffff;
         }
         .logo img {
@@ -214,6 +216,8 @@ input[type="checkbox"]{
             background-color: black;
             padding: 10px 20px ;
             color: #fff;
+            position: relative;
+            z-index: 1;
         }
         
         .container {
@@ -263,6 +267,11 @@ input[type="checkbox"]{
         z-index: -1;
         border-radius: 10px;
     }
+    .lower-section .container{
+      display: block;
+      position: relative;
+     
+    }
 
 /* Media query for tablets and larger devices */
 @media (min-width: 768px) {
@@ -279,6 +288,10 @@ input[type="checkbox"]{
         font-size: 18px; /* Adjust the font size as needed */
     }
 }
+.container{
+  width: 250px;
+  height: 250px;
+}
 
     </style>
 </head>
@@ -291,8 +304,8 @@ input[type="checkbox"]{
     </div>
 </div>
     
-          <input type="checkbox" id="active">
-          <label for="active" class="close"></label>
+         <input type="checkbox" id="active" class="menu-checkbox">
+          <label for="active" class="close"></label> 
           <div class="wrapper">
             <ul>
       <li><a href="index.html">Home</a></li>
@@ -344,7 +357,6 @@ input[type="checkbox"]{
         in a supportive environment. Participants showcase
           their creativity through fun and educational challenges.
       </h6>  
-    
   </div>
 </div>
 
@@ -358,7 +370,23 @@ input[type="checkbox"]{
      </h6>
   </div>
 </div>
+
+<div class="container">
+  <div class="event-list">
+     <h1 class="chc1">Innovation</h1>
+     <h6>
+      Innovation drives progress by introducing new ideas, methods, or products that 
+      revolutionize industries and improve lives. It involves creativity, problem-solving to address challenges and seize opportunities, 
+      ultimately shaping a brighter future for society.
+     </h6>
+  </div>
 </div>
+
+
+
+</div>
+
+
 
 </body>
 </html>
