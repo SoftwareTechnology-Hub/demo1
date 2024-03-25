@@ -206,14 +206,64 @@ input[type="checkbox"]{
         }
         .lower-section {
              
-            background-color: #1ae81a; /* Change the background color as needed */
+            background-color: black; /* Change the background color as needed */
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
+            background-color: black;
             padding: 10px 20px ;
             color: #fff;
         }
         
+        .container {
+        width: 200px;
+        height: 200px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        margin: 15px;
+        position: relative;
+        overflow: hidden;
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 10px 5px white;
+    }
+
+    .container:hover {
+        transform: translateY(-5px);
+    }
+
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: radial-gradient(circle , rgba(13, 3, 104, 0.8) 0%, rgba(255,255,255,0) 80%);
+        z-index: -1;
+        border-radius: 10px;
+    }
+
+    .event-list {
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Lighting effect */
+    .container:hover::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        box-shadow: 0 0 10px 5px rgb(12, 10, 129);
+        z-index: -1;
+        border-radius: 10px;
+    }
+
 /* Media query for tablets and larger devices */
 @media (min-width: 768px) {
     .upper-section {
@@ -272,6 +322,43 @@ input[type="checkbox"]{
       </div>
       
 
+
+  
+<div class="lower-section">
+<div class="container">
+  <div class="event-list">
+    <h1 class="chc1">
+      workshop
+    </h1>
+    <h6>
+      The workshop will cover essential topics, engage participants with interactive sessions, provide valuable resources, and encourage participation through Q&A sessions, all aimed at enhancing learning and fostering collaboration.
+    </h6>
+  </div>
+</div>
+
+<div class="container">
+  <div class="event-list">
+    <h1 class="chc1">Jr.Hackathon</h1>
+      <h6>
+        Junior hackathons offer a platform for young minds to explore problem-solving 
+        in a supportive environment. Participants showcase
+          their creativity through fun and educational challenges.
+      </h6>  
+    
+  </div>
+</div>
+
+<div class="container">
+  <div class="event-list">
+    <h1 class="chc1">Seminar</h1>
+     <h6>
+      Seminars are educational events where experts present on specific topics to inform and 
+      engage audiences. Attendees gain valuable insights 
+       to enhance their knowledge and professional development.
+     </h6>
+  </div>
+</div>
+</div>
 
 </body>
 </html>
